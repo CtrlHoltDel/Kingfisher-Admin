@@ -2,11 +2,12 @@ import React from "react";
 import User from "../components/User";
 import useUsers from "../hooks/useUsers";
 
-const Users = ({ user, generateError, logoutUser }) => {
+const Users = ({ user, generateError, logoutUser, removeUser }) => {
   const { loading, users, filterUser } = useUsers(
     user,
     generateError,
-    logoutUser
+    logoutUser,
+    removeUser
   );
 
   const { token } = user;

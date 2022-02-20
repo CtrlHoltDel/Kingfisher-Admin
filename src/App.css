@@ -90,6 +90,14 @@ header {
   background-color: white;
   border-radius: 5px;
   border: solid rgb(206, 206, 206) 1px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+}
+
+.stats-header {
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 /* Login page */
@@ -100,6 +108,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgb(241, 241, 241);
 }
 
 form {
@@ -117,7 +126,7 @@ input {
 
 .login-button {
   border: none;
-  background-color: rgb(144, 144, 211);
+  background-color: rgb(73, 98, 107);
   color: white;
   padding: 5px;
   border-radius: 5px;
@@ -158,7 +167,7 @@ input {
   display: flex;
 
   border-bottom: solid 1px rgb(206, 206, 206);
-  padding: 20px;
+  padding: 15px 20px;
   width: 100%;
   font-size: 14px;
   align-items: center;
@@ -169,6 +178,7 @@ input {
   font-size: 0.6rem;
   color: rgb(77, 77, 77);
   margin-top: 2px;
+  width: 125px;
 }
 
 .recent-created-by {

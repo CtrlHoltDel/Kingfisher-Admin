@@ -5,6 +5,7 @@ const useRecent = (user, logoutUser, generateError) => {
   const [notes, setNotes] = useState([]);
   const [tendencies, setTendencies] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [stats, setStats] = useState({});
 
   useEffect(() => {
     const fetchRecent = async () => {
@@ -15,6 +16,12 @@ const useRecent = (user, logoutUser, generateError) => {
       }
       const { recent } = res;
 
+      setStats({
+        notes: recent.note_count.count,
+        tendency: recent.tendency_count.count,
+        players: recent.player_count.count,
+        users: recent.user_count.count,
+      });
       setNotes(recent.notes);
       setTendencies(recent.tendencies);
       setLoading(false);
@@ -23,7 +30,13 @@ const useRecent = (user, logoutUser, generateError) => {
     fetchRecent();
   }, [user.token, logoutUser, generateError]);
 
-  return { loading, notes, tendencies };
+  const removeUser = () => {
+    setStats((curr) => {
+      return { ...curr, users: curr.users - 1 };
+    });
+  };
+
+  return { loading, notes, tendencies, stats, removeUser };
 };
 
 export default useRecent;

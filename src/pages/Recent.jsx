@@ -1,10 +1,14 @@
+import { format } from "date-fns";
+
 const Recent = ({ notes, tendencies }) => {
   const createDiv = (name, date, content, by) => {
     return (
       <div className="recent-item">
         <div className="recent-info">
           <p>{name}</p>
-          <p className="recent-date">{date}</p>
+          <p className="recent-date">
+            {format(new Date(date), `dd/MM/yyyy a`)}
+          </p>
           <p className="recent-created-by">{by ? by : "Unknown"}</p>
         </div>
         <p className="recent-content">{content}</p>

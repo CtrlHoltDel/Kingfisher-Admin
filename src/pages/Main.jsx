@@ -6,7 +6,7 @@ import Stats from "./Stats";
 import Users from "./Users";
 
 const Main = ({ user, logoutUser, generateError }) => {
-  const { loading, notes, tendencies } = useRecent(user);
+  const { loading, notes, tendencies, stats, removeUser } = useRecent(user);
 
   if (loading) return <div>Loading..</div>;
 
@@ -19,8 +19,9 @@ const Main = ({ user, logoutUser, generateError }) => {
             logoutUser={logoutUser}
             user={user}
             generateError={generateError}
+            removeUser={removeUser}
           />
-          <Stats />
+          <Stats stats={stats} />
         </div>
         <Recent notes={notes} tendencies={tendencies} />
       </div>

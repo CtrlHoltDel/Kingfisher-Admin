@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { fetchUsers } from "../api";
 
-const useUsers = (user, generateError, logoutUser) => {
+const useUsers = (user, generateError, logoutUser, removeUser) => {
   const [loading, setLoading] = useState(true);
   const [users, setUsers] = useState([]);
 
@@ -26,6 +26,7 @@ const useUsers = (user, generateError, logoutUser) => {
 
   const filterUser = (id) => {
     setUsers((curr) => curr.filter((user) => user.user_id !== id));
+    removeUser();
   };
 
   return { loading, users, filterUser };

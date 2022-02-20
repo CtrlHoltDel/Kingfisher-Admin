@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+
+import useLogin from "./hooks/useLogin";
+import Login from "./pages/Login";
+import Main from "./pages/Main";
 
 function App() {
+  const { user, loginUser, logoutUser } = useLogin();
+  const [error, setError] = useState(false);
+
+  const generateError = (message, status) => {
+    setError(`Error: ${message} || Status: ${status}`);
+  };
+
+  if (!user) return <Login setUser={loginUser} generalError={error} />;
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Main user={user} logoutUser={logoutUser} generateError={generateError} />
     </div>
   );
 }

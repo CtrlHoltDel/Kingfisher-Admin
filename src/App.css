@@ -5,6 +5,56 @@
   background-color: rgb(241, 241, 241);
 }
 
+/* Login page */
+
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(241, 241, 241);
+}
+
+form {
+  display: flex;
+  width: 200px;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: solid 1px rgb(179, 175, 175);
+  border-radius: 5px;
+}
+
+.login-button {
+  border: none;
+  background-color: rgb(73, 98, 107);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.login-button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.input-error {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.8rem;
+  color: rgb(185, 4, 4);
+}
+
+.error-container {
+  height: 40px;
+}
+
+/* General */
+
 .content {
   display: flex;
   margin: 20px;
@@ -78,7 +128,7 @@ header {
 
 .button-component:hover {
   cursor: pointer;
-  background-color: rgb(223, 223, 223);
+  background-color: rgb(235, 235, 235);
   border-radius: 5px;
 }
 
@@ -100,54 +150,6 @@ header {
   font-weight: bold;
 }
 
-/* Login page */
-
-.login-page {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(241, 241, 241);
-}
-
-form {
-  display: flex;
-  width: 200px;
-  flex-direction: column;
-}
-
-input {
-  margin-bottom: 10px;
-  padding: 5px;
-  border: solid 1px rgb(179, 175, 175);
-  border-radius: 5px;
-}
-
-.login-button {
-  border: none;
-  background-color: rgb(73, 98, 107);
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.login-button:hover {
-  cursor: pointer;
-  text-decoration: underline;
-}
-
-.input-error {
-  text-align: center;
-  margin-top: 15px;
-  font-size: 0.8rem;
-  color: rgb(185, 4, 4);
-}
-
-.error-container {
-  height: 40px;
-}
-
 /* Recent item */
 
 .recents {
@@ -165,7 +167,6 @@ input {
 
 .recent-item {
   display: flex;
-
   border-bottom: solid 1px rgb(206, 206, 206);
   padding: 15px 20px;
   width: 100%;
@@ -195,4 +196,20 @@ input {
 
 .tendencies {
   margin-top: 20px;
+}
+
+/* Config */
+
+.config {
+  border-radius: 5px;
+  border: solid rgb(206, 206, 206) 1px;
+  background-color: white;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.config-setting {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { login } from "../api";
 
-const Login = ({ setUser, generalError }) => {
+const Login = ({ setUser, loginError }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -53,7 +53,11 @@ const Login = ({ setUser, generalError }) => {
         <button className="login-button">Login</button>
         <div className="error-container">
           {error && <p className="input-error">{error}</p>}
-          {generalError && <p className="input-error">{generalError}</p>}
+          {loginError && (
+            <p className="input-error" style={{ textAlign: "center" }}>
+              {loginError}
+            </p>
+          )}
         </div>
       </form>
     </div>

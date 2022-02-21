@@ -1,7 +1,9 @@
 const axios = require("axios");
 
+console.log(process.env);
+
 const api = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: process.env.REACT_APP_TLD,
 });
 
 export const login = async (username, password) => {
@@ -13,6 +15,7 @@ export const login = async (username, password) => {
 
     return data;
   } catch (err) {
+    if (!err.response) return { error: { message: "No access to server" } };
     return err.response.data;
   }
 };
@@ -55,15 +58,23 @@ export const delUser = async (token, id) => {
 
 export const getRecent = async (token) => {
   try {
-    console.log("getting recent");
     const { data } = await api.get("/admin/recent", {
       headers: { authorisation: `Bearer ${token}` },
     });
-
-    console.log(data);
     return data;
   } catch (err) {
-    console.log(err, "<<");
+    return err.response.data;
+  }
+};
+
+export const getBackup = async (token) => {
+  try {
+    const { data } = await api.get("/backup", {
+      headers: { authorisation: `Bearer ${token}` },
+    });
+
+    return data;
+  } catch (err) {
     return err.response.data;
   }
 };

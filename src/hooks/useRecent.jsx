@@ -10,10 +10,13 @@ const useRecent = (user, logoutUser, generateError) => {
   useEffect(() => {
     const fetchRecent = async () => {
       const res = await getRecent(user.token);
+
       if (res.error) {
         logoutUser();
         generateError(res.error.message, res.error.status);
+        return;
       }
+
       const { recent } = res;
 
       setStats({

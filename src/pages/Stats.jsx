@@ -1,7 +1,6 @@
 import React from "react";
 
 const Stats = ({ stats }) => {
-  console.log(stats);
   return (
     <div className="stats">
       <p className="stats-header">Stats</p>

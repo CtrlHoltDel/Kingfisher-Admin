@@ -1,10 +1,12 @@
 import { useState } from "react";
 import { login } from "../api";
+import loadingIcon from "../assets/loading.svg";
 
 const Login = ({ setUser, loginError }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -21,6 +23,7 @@ const Login = ({ setUser, loginError }) => {
       return;
     }
 
+    setLoading(true);
     const result = await login(username, password);
 
     if (result?.error) {
@@ -32,6 +35,7 @@ const Login = ({ setUser, loginError }) => {
       setError("Please use a valid administrator account");
     }
 
+    setLoading(false);
     setUser(result.user);
   };
 
@@ -60,6 +64,15 @@ const Login = ({ setUser, loginError }) => {
           )}
         </div>
       </form>
+      <div style={{ height: "40px" }}>
+        {loading && (
+          <img
+            style={{ height: "40px", width: "40px" }}
+            src={loadingIcon}
+            alt="Loading Icon"
+          />
+        )}
+      </div>
     </div>
   );
 };

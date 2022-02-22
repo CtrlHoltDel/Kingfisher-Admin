@@ -69,11 +69,11 @@ export const getRecent = async (token) => {
 
 export const getBackup = async (token) => {
   try {
-    const { data } = await api.get("/backup", {
+    const { data } = await api.get("/admin/generateKey", {
       headers: { authorisation: `Bearer ${token}` },
     });
 
-    return data;
+    return data.key;
   } catch (err) {
     return err.response.data;
   }

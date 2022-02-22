@@ -3,8 +3,8 @@ import Button from "../components/Button";
 
 const Config = ({ token }) => {
   const fetchBackup = async () => {
-    const response = await getBackup(token);
-    console.log(response);
+    const { key } = await getBackup(token);
+    window.open(`${process.env.REACT_APP_TLD}/backup/${key}`);
   };
 
   return (

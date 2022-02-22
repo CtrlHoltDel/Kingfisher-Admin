@@ -6,7 +6,7 @@ const RecentItem = ({ name, date, content, by }) => {
       <div className="recent-info">
         <p>{name}</p>
         <p className="recent-date">
-          {format(new Date(date), `dd/MM/yyyy hh:mm`)}
+          {format(new Date(date), `dd/MM/yyyy HH:mm`)}
         </p>
         <p className="recent-created-by">{by ? by : "Unknown"}</p>
       </div>

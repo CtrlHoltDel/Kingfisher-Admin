@@ -1,4 +1,4 @@
-import RecentItem from "../components/RecentItem";
+import RecentItem from "./RecentItem";
 
 const Recent = ({ notes, tendencies }) => {
   return (

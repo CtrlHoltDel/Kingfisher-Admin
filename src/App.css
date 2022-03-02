@@ -214,3 +214,76 @@ header {
   align-items: center;
   justify-content: space-between;
 }
+
+/* Live Feed */
+
+.live-feed {
+  background-color: white;
+  margin: 20px;
+  padding: 10px;
+  border: solid 1px rgb(180, 180, 180);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  padding: 25px;
+}
+
+.more-info {
+  margin-right: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-info > button {
+  border: none;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.3rem;
+  color: rgb(73, 98, 107);
+}
+.more-info > button:hover {
+  cursor: pointer;
+  color: gray;
+}
+.main-message {
+  display: flex;
+}
+
+.live-message-user {
+  color: rgb(49, 49, 160);
+  width: 120px;
+}
+
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  flex-direction: column;
+  font-size: 0.9rem;
+}
+
+.extra-info {
+  font-size: 0.6rem;
+  color: gray;
+}
+
+.no-activity {
+  font-size: 9rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: rgb(73, 98, 107);
+  padding: 100px;
+}
+
+.no-activity > p {
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 10px;
+}

@@ -27,7 +27,7 @@ const Main = ({ user, logoutUser, generateError }) => {
       <Header logoutUser={logoutUser} />
       <Routes>
         <Route
-          path={"/dashboard" || "/"}
+          path={"/"}
           element={
             <Dashboard
               user={user}

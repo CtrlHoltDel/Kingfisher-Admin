@@ -287,3 +287,10 @@ header {
   font-style: italic;
   margin-top: 10px;
 }
+
+.current-backend {
+  font-size: 0.8rem;
+  align-self: center;
+  margin-right: 20px;
+  color: white;
+}
